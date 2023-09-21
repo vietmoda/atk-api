@@ -1,0 +1,23 @@
+[
+    "image/jpg",
+    "image/gif",
+    "image/jpeg",
+    "text/plain",
+    "text/csv",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/pdf",
+    "application/vnd.ms-powerpoint",
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "application/vnd.ms-excel",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "application/vnd.oasis.opendocument.text",
+    "audio/wav",
+    "audio/mpeg",
+    "video/mp4",
+    "video/3gpp",
+    "audio/3gpp",
+    "application/vnd.rar",
+    "application/zip",
+    "application/x-7z-compressed"    
+]

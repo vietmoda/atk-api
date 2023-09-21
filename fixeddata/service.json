@@ -1,0 +1,14 @@
+[
+    {
+        "label": "Đặt phòng nghỉ",
+        "value": "Booking"
+    },
+    {
+        "label": "Đặt bàn, đặt món",
+        "value": "Order"
+    },
+    {
+        "label": "Đặt lịch tham quan, dâng hương",
+        "value": "BookTour"
+    } 
+]

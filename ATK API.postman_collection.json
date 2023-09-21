@@ -1,0 +1,5007 @@
+{
+	"info": {
+		"_postman_id": "aa4b76b9-20d3-48b9-ad3a-5153a469d27d",
+		"name": "ATK API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5819493",
+		"_collection_link": "https://gold-firefly-326364.postman.co/workspace/ATK~47c3089e-0b99-4b09-b0b7-482c8c1e70f0/collection/5819493-aa4b76b9-20d3-48b9-ad3a-5153a469d27d?action=share&creator=5819493&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Vnpt@123\",\r\n    \"audit\": {\r\n        \"useraction\": \"admin\",\r\n        \"clientip\": \"10.23.29.6\",\r\n        \"deviceinfo\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:108.0) Gecko/20100101 Firefox/108.0\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Log",
+			"item": [
+				{
+					"name": "Getall",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/logcommands/searchlog?actiontype&collectionname&keyword&startdate=01/01/1900&enddate=31/12/2023",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"logcommands",
+								"searchlog"
+							],
+							"query": [
+								{
+									"key": "actiontype",
+									"value": null
+								},
+								{
+									"key": "collectionname",
+									"value": null
+								},
+								{
+									"key": "keyword",
+									"value": null
+								},
+								{
+									"key": "startdate",
+									"value": "01/01/1900"
+								},
+								{
+									"key": "enddate",
+									"value": "31/12/2023"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get with total",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/logcommands/getwithtotal?actiontype&collectionname&keyword&startdate=01/01/1900&enddate=31/12/2023",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"logcommands",
+								"getwithtotal"
+							],
+							"query": [
+								{
+									"key": "actiontype",
+									"value": null
+								},
+								{
+									"key": "collectionname",
+									"value": null
+								},
+								{
+									"key": "keyword",
+									"value": null
+								},
+								{
+									"key": "startdate",
+									"value": "01/01/1900"
+								},
+								{
+									"key": "enddate",
+									"value": "31/12/2023"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/logcommands/count?actiontype&collectionname&keyword&startdate=01/01/1900&enddate=31/12/2023",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"logcommands",
+								"count"
+							],
+							"query": [
+								{
+									"key": "actiontype",
+									"value": null
+								},
+								{
+									"key": "collectionname",
+									"value": null
+								},
+								{
+									"key": "keyword",
+									"value": null
+								},
+								{
+									"key": "startdate",
+									"value": "01/01/1900"
+								},
+								{
+									"key": "enddate",
+									"value": "31/12/2023"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.request.headers.add({  \r",
+									"  clientip: \"10.23.29.6\",\r",
+									"  deviceinfo: \"\",\r",
+									"  devicetype: \"POSTMAN\"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Vnpt@123\",    \r\n    \"fullname\": \"Quản trị viên\",\r\n    \"email\": \"\",\r\n    \"address\":\"\",\r\n    \"position\": \"Nhân viên\",    \r\n    \"telephone\": \"\",\r\n    \"organizationid\": 1,\r\n    \"avatar\": \"641170fc24992aabb259047d\",\r\n    \"usertype\": 1,\r\n    \"roleid\":[],\r\n    \"grouproleid\":[\"434343\",\"4343434\"],\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6423e3706951ba9032afb909\",\r\n    \"username\": \"admin2\",\r\n    \"password\": \"Vnpt@123\",    \r\n    \"fullname\": \"Quản trị viên 2\",\r\n    \"email\": \"\",\r\n    \"address\":\"\",\r\n    \"position\": \"Nhân viên\",    \r\n    \"telephone\": \"\",\r\n    \"organizationid\": 1,\r\n    \"avatar\": \"641170fc24992aabb259047d\",\r\n    \"usertype\": 1,\r\n    \"roleid\":[\"333\",\"sdsd\"],    \r\n    \"grouproleid\":[\"434343\",\"4343434\"],\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6412c62661f1c5188df76447\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/byid?_id=6423e3706951ba9032afb909",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"byid"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "6423e3706951ba9032afb909"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account api",
+			"item": [
+				{
+					"name": "Getall",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/apiaccounts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"apiaccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.request.headers.add({  \r",
+									"  clientip: \"10.23.29.6\",\r",
+									"  deviceinfo: \"\",\r",
+									"  devicetype: \"POSTMAN\"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apiurl\": \"http://domain.vb/api/abc\",\r\n    \"username\": \"admin\",\r\n    \"password\": \"Vnpt@123\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/apiaccounts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"apiaccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6423e3706951ba9032afb909\",\r\n    \"username\": \"admin2\",\r\n    \"password\": \"Vnpt@123\",    \r\n    \"fullname\": \"Quản trị viên 2\",\r\n    \"email\": \"\",\r\n    \"address\":\"\",\r\n    \"position\": \"Nhân viên\",    \r\n    \"telephone\": \"\",\r\n    \"organizationid\": 1,\r\n    \"avatar\": \"641170fc24992aabb259047d\",\r\n    \"usertype\": 1,\r\n    \"roleid\":[\"333\",\"sdsd\"],    \r\n    \"grouproleid\":[\"434343\",\"4343434\"],\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6412c62661f1c5188df76447\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group role",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupname\": \"Quản lý người dùng\",\r\n    \"listroleid\": [\"3434343\", \"45454545\"],\r\n    \"status\": 1  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/groups",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6411442ef8f162c118384b04\",\r\n    \"groupname\": \"Quản lý tin tức 1\",\r\n    \"listroleid\": [\"4343443\",\"43434343\"],\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/groups",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupid\": \"64114297a0bdde34b0ebbb34\",   \r\n    \"audit\": {\r\n        \"useraction\": \"admin\",\r\n        \"clientip\": \"10.23.29.6\",\r\n        \"deviceinfo\": \"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/groups",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6411442ef8f162c118384b04\", \r\n    \"status\": 2    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/groups/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"groups",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/groups?status=1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"groups"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "Upload file",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/G:/SOURCE/CHUYEN DOI SO/ATK/Chuc nang tong the.jpg"
+								},
+								{
+									"key": "audit",
+									"value": "{\n        \"useraction\": \"admin\",\n        \"clientip\": \"10.23.29.6\",\n        \"deviceinfo\": \"\"\n    }",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "sourcetype",
+									"value": "7",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "sourcekey",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/files",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete file",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"64463159c94c903589cc8534\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/files",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete multi file",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listfileid\": [\r\n        \"645607c40cfe0660652356f0\",\r\n        \"645607c40cfe0660652356f2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/files/multi",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"files",
+								"multi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/files/byid?_id=645607c40cfe0660652356ee",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"files",
+								"byid"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "645607c40cfe0660652356ee"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "System config",
+			"item": [
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/systemconfigs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"systemconfigs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"configkey\": \"key_test\",\r\n    \"configvalue\": \"1\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/systemconfigs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"systemconfigs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"64672565c70a48795ea58b66\",\r\n    \"configkey\": \"key_test_1\",\r\n    \"configvalue\": \"2\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/systemconfigs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"systemconfigs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"64672565c70a48795ea58b66\",    \r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/systemconfigs/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"systemconfigs",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"64463159c94c903589cc8534\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/systemconfigs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"systemconfigs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/roles",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rolename\": \"Xem danh sách người dùng\",    \r\n    \"status\": 1,\r\n    \"audit\": {\r\n        \"useraction\": \"admin\",\r\n        \"clientip\": \"10.23.29.6\",\r\n        \"deviceinfo\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:108.0) Gecko/20100101 Firefox/108.0\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/roles",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fixed data",
+			"item": [
+				{
+					"name": "Language",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fixeddata/language",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fixeddata",
+								"language"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fixeddata/newsstatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fixeddata",
+								"newsstatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Weblink view type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fixeddata/weblinkviewtype",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fixeddata",
+								"weblinkviewtype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Data status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fixeddata/datastatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fixeddata",
+								"datastatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Process status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fixeddata/processstatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fixeddata",
+								"processstatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fixeddata/datastatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fixeddata",
+								"datastatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fixeddata/service",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fixeddata",
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NewsCategoryType",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fixeddata/newscategorytype",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fixeddata",
+								"newscategorytype"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News Category",
+			"item": [
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/newscategories?type=News",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"newscategories"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "News"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get trees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/newscategories/tree?type=News&parentid=643e12ead72221f5e9db16a8&flatt=0",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"newscategories",
+								"tree"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "News"
+								},
+								{
+									"key": "parentid",
+									"value": "643e12ead72221f5e9db16a8"
+								},
+								{
+									"key": "flatt",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newscategoryname\": \"Album ảnh lễ hội\",    \r\n    \"newscategorytype\": \"Album\",\r\n    \"parentid\": \"\",\r\n    \"status\": 1 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/newscategories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"newscategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6434d3e2fa7f65b4bb2eadec\", \r\n    \"newscategoryname\": \"Tin hoạt động 1 edit 1111\",    \r\n    \"newscategorytype\": 1,\r\n    \"parentid\": \"\",\r\n    \"status\": 1 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/newscategories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"newscategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update statue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6434d3e2fa7f65b4bb2eadec\",     \r\n    \"status\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/newscategories/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"newscategories",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6434d3e2fa7f65b4bb2eadec\"        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/newscategories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"newscategories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Getall category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/categories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryname\": \"Danh mục chức vụ\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/categories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6436049b8b1b376cb2cfbc46\",\r\n    \"categoryname\": \"Danh mục chức vụ edit\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/categories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6436049b8b1b376cb2cfbc46\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/categories/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category item",
+			"item": [
+				{
+					"name": "Getall category item",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/items",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall by category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/items/bycategoryid?categoryid=6436049b8b1b376cb2cfbc46",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"items",
+								"bycategoryid"
+							],
+							"query": [
+								{
+									"key": "categoryid",
+									"value": "6436049b8b1b376cb2cfbc46"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create category item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemname\": \"Bí thư\",    \r\n    \"categoryid\": \"6436049b8b1b376cb2cfbc46\",\r\n    \"parentid\": \"\",\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/items",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit category item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"64360a99ee894fd60cbbcebd\",\r\n    \"itemname\": \"Giám đốc 1\",    \r\n    \"categoryid\": \"6436049b8b1b376cb2cfbc46\",\r\n    \"parentid\": \"\",\r\n    \"status\": 1     \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/items",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"64360a99ee894fd60cbbcebd\",    \r\n    \"status\": 0    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/items/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"items",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Video",
+			"item": [
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/videos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall by category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/videos/bycategoryid?status=1&categoryid=64376271ee21e56d9fd05677",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"videos",
+								"bycategoryid"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "categoryid",
+									"value": "64376271ee21e56d9fd05677"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"videoname\": \"Giới thiệu về VNPT-VSR\",    \r\n    \"videoavatar\": \"\",\r\n    \"description\": \"Video giới thiệu sản phẩm Báo cáo thông minh\",\r\n    \"videourl\": \"\",\r\n    \"fileid\": \"\",\r\n    \"categoryid\": \"64376271ee21e56d9fd05677\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/videos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"643762d4ee21e56d9fd05680\",\r\n    \"videoname\": \"Giới thiệu về VNPT-VSR 1\",    \r\n    \"videoavatar\": \"\",\r\n    \"videoavatarolder\": \"\",\r\n    \"description\": \"Video giới thiệu sản phẩm Báo cáo thông minh\",\r\n    \"videourl\": \"\",\r\n    \"fileid\": \"\",\r\n    \"fileidolder\": \"\",\r\n    \"categoryid\": \"64376271ee21e56d9fd05677\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/videos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"64360a99ee894fd60cbbcebd\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/videos/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"videos",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Weblink",
+			"item": [
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/weblinks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"weblinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall by category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/weblinks/bycategoryid?status=1&categoryid=64376271ee21e56d9fd05677",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"weblinks",
+								"bycategoryid"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "categoryid",
+									"value": "64376271ee21e56d9fd05677"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"linkname\": \"Cổng thông tin điện tử tỉnh THái Nguyên\",    \r\n    \"linkurl\": \"https://thainguyen.gov.vn\",\r\n    \"viewtype\": \"Title\",    \r\n    \"fileid\": \"\",\r\n    \"categoryid\": \"\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/weblinks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"weblinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6441f38c43165715efd61a53\",\r\n    \"linkname\": \"Cổng thông tin điện tử tỉnh THái Nguyên 1\",    \r\n    \"linkurl\": \"https://thainguyen.gov.vn\",\r\n    \"viewtype\": \"Title\",    \r\n    \"fileid\": \"\",\r\n    \"categoryid\": \"\",    \r\n    \"status\": 1    \r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/weblinks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"weblinks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6441f38c43165715efd61a53\",    \r\n    \"status\": 0    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/weblinks/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"weblinks",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Chủ tịch Quốc hội Vương Đình Huệ hội đàm với Chủ tịch Quốc hội Chính quyền Nhân dân Cuba Esteban Lazo Hernández\",    \r\n    \"description\": \"\",\r\n    \"newsbody\": \"Nội dung tin bài\",    \r\n    \"listcategoryid\": [\r\n        \"643e12ead72221f5e9db16a8\",\r\n        \"643e12f8d72221f5e9db16ac\"\r\n    ],\r\n    \"keywords\": \"Thời sự, trực tuyến\",    \r\n    \"newsstatus\": 2,\r\n    \"publishdate\":\"27/04/2023\",\r\n    \"author\": \"Trần Huyền\",\r\n    \"source\": \"thainguyen.gov.vn\",\r\n    \"image\": \"64463159c94c903589cc8534\",\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/news",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"3434343434343\",\r\n    \"title\": \"Cổng thông tin điện tử tỉnh THái Nguyên\",    \r\n    \"description\": \"https://thainguyen.gov.vn\",\r\n    \"body\": \"Title\",    \r\n    \"listcategoryid\": [\r\n        \"4535435345345\",\r\n        \"543534543GFH434\"\r\n    ],\r\n    \"keywords\": \"\",        \r\n    \"author\": \"\",\r\n    \"source\": \"\",\r\n    \"image\": \"\",\r\n    \"imageolder\": \"\",\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/news",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/news",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get with total",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/news/getwithtotal?status=-1&categoryid=&newsstatus=&keyword=&currentpage=1&itemperpage=10&publishdatestart=01/01/2000&publishdateend=01/01/2024&createddatestart=01/01/2000&createddateend=01/01/2024",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"news",
+								"getwithtotal"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "-1"
+								},
+								{
+									"key": "categoryid",
+									"value": ""
+								},
+								{
+									"key": "newsstatus",
+									"value": ""
+								},
+								{
+									"key": "keyword",
+									"value": ""
+								},
+								{
+									"key": "currentpage",
+									"value": "1"
+								},
+								{
+									"key": "itemperpage",
+									"value": "10"
+								},
+								{
+									"key": "publishdatestart",
+									"value": "01/01/2000"
+								},
+								{
+									"key": "publishdateend",
+									"value": "01/01/2024"
+								},
+								{
+									"key": "createddatestart",
+									"value": "01/01/2000"
+								},
+								{
+									"key": "createddateend",
+									"value": "01/01/2024"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall by category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/news/bycategoryid?status=-1&categoryid=&newsstatus=&keyword=&currentpage=1&itemperpage=10&publishdatestart=01/01/2000&publishdateend=01/01/2024&createddatestart=01/01/2000&createddateend=01/01/2024",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"news",
+								"bycategoryid"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "-1"
+								},
+								{
+									"key": "categoryid",
+									"value": ""
+								},
+								{
+									"key": "newsstatus",
+									"value": ""
+								},
+								{
+									"key": "keyword",
+									"value": ""
+								},
+								{
+									"key": "currentpage",
+									"value": "1"
+								},
+								{
+									"key": "itemperpage",
+									"value": "10"
+								},
+								{
+									"key": "publishdatestart",
+									"value": "01/01/2000"
+								},
+								{
+									"key": "publishdateend",
+									"value": "01/01/2024"
+								},
+								{
+									"key": "createddatestart",
+									"value": "01/01/2000"
+								},
+								{
+									"key": "createddateend",
+									"value": "01/01/2024"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count by category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/news/countbycategoryid?status=1&categoryid=643e12ead72221f5e9db16a8&newsstatus=0&keyword=&publishdatestart=01/01/2000&publishdateend=01/01/2024&createddatestart=01/01/2000&createddateend=01/01/2024",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"news",
+								"countbycategoryid"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "categoryid",
+									"value": "643e12ead72221f5e9db16a8"
+								},
+								{
+									"key": "newsstatus",
+									"value": "0"
+								},
+								{
+									"key": "keyword",
+									"value": ""
+								},
+								{
+									"key": "publishdatestart",
+									"value": "01/01/2000"
+								},
+								{
+									"key": "publishdateend",
+									"value": "01/01/2024"
+								},
+								{
+									"key": "createddatestart",
+									"value": "01/01/2000"
+								},
+								{
+									"key": "createddateend",
+									"value": "01/01/2024"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/news/getbyid?_id=64463331b4ec3bce24f63f06",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"news",
+								"getbyid"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "64463331b4ec3bce24f63f06"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"64463331b4ec3bce24f63f06\",    \r\n    \"status\": 0    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/news/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"news",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Album (ảnh trong album)",
+			"item": [
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall by category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/bycategoryid?status=1&categoryid=64376271ee21e56d9fd05677",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"bycategoryid"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "categoryid",
+									"value": "64376271ee21e56d9fd05677"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imagename\": \"Lễ hội Lồng tồng 1\",        \r\n    \"description\": \"Ảnh chụp các nghệ nhân tham gia lễ hội\",    \r\n    \"fileid\": \"\",\r\n    \"categoryid\": \"643cb123fb3a48c6d99ebddf\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create multi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryid\": \"643cb123fb3a48c6d99ebddf\",\r\n    \"images\":[\r\n                {\r\n                    \"imagename\": \"Lễ hội Lồng tồng 1\",        \r\n                    \"description\": \"\",    \r\n                    \"fileid\": \"\"                    \r\n                },\r\n                {\r\n                    \"imagename\": \"Lễ hội Lồng tồng 2\",        \r\n                    \"description\": \"\",    \r\n                    \"fileid\": \"\"              \r\n                }\r\n            ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/multi",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"multi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imagename\": \"Lễ hội Lồng tồng\",        \r\n    \"description\": \"Ảnh chụp các nghệ nhân tham gia lễ hội\",    \r\n    \"fileid\": \"\",\r\n    \"fileidolder\": \"\",\r\n    \"categoryid\": \"643cb123fb3a48c6d99ebddf\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"643cb183fb3a48c6d99ebde7\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking (đặt lịch dâng hương, tham quan)",
+			"item": [
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bookings",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get with total",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bookings/getwithtotal?status=1&processstatus=0&keyword=<script>xem xét</script>&currentpage=1&itemperpage=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bookings",
+								"getwithtotal"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "processstatus",
+									"value": "0"
+								},
+								{
+									"key": "keyword",
+									"value": "<script>xem xét</script>"
+								},
+								{
+									"key": "currentpage",
+									"value": "1"
+								},
+								{
+									"key": "itemperpage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get paging",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bookings/getpaging?status=1&processstatus=0&keyword=<script>xem xét</script>&currentpage=1&itemperpage=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bookings",
+								"getpaging"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "processstatus",
+									"value": "0"
+								},
+								{
+									"key": "keyword",
+									"value": "<script>xem xét</script>"
+								},
+								{
+									"key": "currentpage",
+									"value": "1"
+								},
+								{
+									"key": "itemperpage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bookings/count?status=1&processstatus=0&keyword=<script>xem xét</script>&currentpage=1&itemperpage=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bookings",
+								"count"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "processstatus",
+									"value": "0"
+								},
+								{
+									"key": "keyword",
+									"value": "<script>xem xét</script>"
+								},
+								{
+									"key": "currentpage",
+									"value": "1"
+								},
+								{
+									"key": "itemperpage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"visitername\": \"VNPT Thái Nguyên\",    \r\n    \"address\": \"Số 10, đường Cách mạng tháng 8, phường Phan Đình Phùng, TP.Thái Nguyên\",\r\n    \"telephone\": \"02083756559\",    \r\n    \"email\": \"\",\r\n    \"totalmember\": 15,\r\n    \"leaderinfo\": \"Ông Nguyễn Việt Bắc - PGĐ Viễn thông Thái Nguyên\",\r\n    \"visitdate\": \"30/04/2023\",\r\n    \"visithour\": \"08:30\",      \r\n    \"content\": \"Tổ chức lễ dâng hương báo công lên Bác\", \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bookings",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"644784b460d40c4c0641bf6c\",\r\n    \"visitername\": \"VNPT Thái Nguyên\",\r\n    \"address\": \"Số 10, đường Cách mạng tháng 8, phường Phan Đình Phùng, TP.Thái Nguyên\",\r\n    \"telephone\": \"02083756559\",\r\n    \"email\": \"vttn@gmail.com\",\r\n    \"totalmember\": \"16\",\r\n    \"leaderinfo\": \"Ông Nguyễn Việt Bắc - PGĐ Viễn thông Thái Nguyên\",\r\n    \"visitdate\": \"30/04/2023\",\r\n    \"visithour\": \"08:30\",\r\n    \"content\": \"Tổ chức lễ dâng hương báo công lên Bác\",\r\n    \"processstatus\": 0,\r\n    \"processinfo\": \"\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bookings",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"644784b460d40c4c0641bf6c\",    \r\n    \"status\": 0    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bookings/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bookings",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update process",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"644784b460d40c4c0641bf6c\",    \r\n    \"processstatus\": 1,\r\n    \"processinfo\": \"\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bookings/updateprocess",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bookings",
+								"updateprocess"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suggestedmenu (thực đơn đề xuất)",
+			"item": [
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/suggestedmenus?status=1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"suggestedmenus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"menuname\": \"Thực đơn 1\",    \r\n    \"numberdiners\": 10,\r\n    \"price\": \"2 triệu (trung bình 200k/1s)\",    \r\n    \"listfood\": [\r\n        \"Măng xào\",\r\n        \"Gà luộc\",\r\n        \"Nem rán bắc bộ\",\r\n        \"Ngô chiên\"\r\n    ],\r\n    \"note\": \"\",   \r\n    \"images\": [\r\n        \"3422342343wrerer\",\r\n        \"43432545435dsdsds\"\r\n    ],\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/suggestedmenus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"suggestedmenus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"645458f5044a2a7c356ec187\",\r\n    \"menuname\": \"Thực đơn 4\",    \r\n    \"numberdiners\": 10,\r\n    \"price\": \"2 triệu (trung bình 200k/1s)\",    \r\n    \"listfood\": [\r\n        \"Măng xào\",\r\n        \"Gà luộc\",\r\n        \"Nem rán bắc bộ\",\r\n        \"Ngô chiên\"\r\n    ],\r\n    \"note\": \"\",   \r\n    \"images\": [\r\n        \"342234244343wrerer\",\r\n        \"434325444445435dsdsds\"\r\n    ],\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/suggestedmenus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"suggestedmenus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"645458f5044a2a7c356ec187\",    \r\n    \"status\": 0    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/suggestedmenus/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"suggestedmenus",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order menu (Đặt bàn)",
+			"item": [
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ordermenus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ordermenus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get with total",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ordermenus/getwithtotal?status=1&processstatus=0&keyword=<script>xem xét</script>&currentpage=1&itemperpage=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ordermenus",
+								"getwithtotal"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "processstatus",
+									"value": "0"
+								},
+								{
+									"key": "keyword",
+									"value": "<script>xem xét</script>"
+								},
+								{
+									"key": "currentpage",
+									"value": "1"
+								},
+								{
+									"key": "itemperpage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get paging",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ordermenus/getpaging?status=1&processstatus=0&keyword=<script>xem xét</script>&currentpage=1&itemperpage=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ordermenus",
+								"getpaging"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "processstatus",
+									"value": "0"
+								},
+								{
+									"key": "keyword",
+									"value": "<script>xem xét</script>"
+								},
+								{
+									"key": "currentpage",
+									"value": "1"
+								},
+								{
+									"key": "itemperpage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ordermenus/count?status=1&processstatus=0&keyword=<script>xem xét</script>&currentpage=1&itemperpage=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ordermenus",
+								"count"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "processstatus",
+									"value": "0"
+								},
+								{
+									"key": "keyword",
+									"value": "<script>xem xét</script>"
+								},
+								{
+									"key": "currentpage",
+									"value": "1"
+								},
+								{
+									"key": "itemperpage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"VNPT Thái Nguyên\",    \r\n    \"address\": \"Số 10, đường Cách mạng tháng 8, phường Phan Đình Phùng, TP.Thái Nguyên\",\r\n    \"telephone\": \"02083756559\",    \r\n    \"email\": \"\",\r\n    \"totaldiners\": 15,    \r\n    \"visitdate\": \"30/04/2023\",\r\n    \"visithour\": \"08:30\",      \r\n    \"content\": \"15 người chia làm 2 mâm, thực đơn số 1, thay rau cải bằng rau muống xào\", \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ordermenus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ordermenus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"644784b460d40c4c0641bf6c\",\r\n    \"visitername\": \"VNPT Thái Nguyên\",\r\n    \"address\": \"Số 10, đường Cách mạng tháng 8, phường Phan Đình Phùng, TP.Thái Nguyên\",\r\n    \"telephone\": \"02083756559\",\r\n    \"email\": \"vttn@gmail.com\",\r\n    \"totalmember\": \"16\",\r\n    \"leaderinfo\": \"Ông Nguyễn Việt Bắc - PGĐ Viễn thông Thái Nguyên\",\r\n    \"visitdate\": \"30/04/2023\",\r\n    \"visithour\": \"08:30\",\r\n    \"content\": \"Tổ chức lễ dâng hương báo công lên Bác\",\r\n    \"processstatus\": 0,\r\n    \"processinfo\": \"\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ordermenus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ordermenus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"644784b460d40c4c0641bf6c\",    \r\n    \"status\": 0    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ordermenus/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ordermenus",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update process",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"644784b460d40c4c0641bf6c\",    \r\n    \"processstatus\": 1,\r\n    \"processinfo\": \"\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/ordermenus/updateprocess",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"ordermenus",
+								"updateprocess"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Area (Đơn vị HC)",
+			"item": [
+				{
+					"name": "Getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/areas",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"areas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Getall trees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/areas/trees?flatt=1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"areas",
+								"trees"
+							],
+							"query": [
+								{
+									"key": "flatt",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"code\": \"TNN-DHA-BTH\",    \r\n    \"name\": \"Xã Bình Thành\",\r\n    \"parentid\": \"647ee4a85b75cd521254db95\",    \r\n    \"orderby\": \"1\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/areas",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"areas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"_id\": \"647ee4dc5b75cd521254dba3\",\r\n    \"code\": \"TNN-DHA-BTH\",    \r\n    \"name\": \"Xã Bình Thành\",    \r\n    \"orderby\": \"1\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/areas",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"areas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"64360a99ee894fd60cbbcebd\",    \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/areas/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"areas",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"643762d4ee21e56d9fd05680\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/areas",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"areas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Emails",
+			"item": [
+				{
+					"name": "Send text",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"to\": \"trongnam1509@gmail.com\",    \r\n    \"subject\": \"Email test từ hệ thống CSDL di tích lịch sử\",\r\n    \"text\": \"Đây là nội dung text của email\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/emails/sendtext",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"emails",
+								"sendtext"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send html",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"to\": \"trongnam1509@gmail.com\",    \r\n    \"subject\": \"Email test từ hệ thống CSDL di tích lịch sử\",\r\n    \"html\": \"<h1>Đây là nội dung html của email<h2>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/emails/sendhtml",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"emails",
+								"sendhtml"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HistoricalSite (Điểm DTLS)",
+			"item": [
+				{
+					"name": "Upgrades",
+					"item": [
+						{
+							"name": "Getall",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/upgrades",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"upgrades"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Sơn lại 4 tường xung quanh\",       \r\n    \"executetime\": \"30/04/2023\",\r\n    \"executor\": \"Công ty xây dựng Hòa Bình\",\r\n    \"expense\": \"500000000\",      \r\n    \"historicalsiteid\": \"647ef3dfac0afb22be31605d\", \r\n    \"status\": 1    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/upgrades",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"upgrades"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"64891833dfe5b79fd797fcb0\",\r\n    \"content\": \"Sơn lại 4 tường xung quanh updated\",       \r\n    \"executetime\": \"29/04/2023\",\r\n    \"executor\": \"Công ty xây dựng Hòa Bình\",\r\n    \"expense\": \"500000000\",      \r\n    \"historicalsiteid\": \"647ef3dfac0afb22be31605d\", \r\n    \"status\": 1    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/upgrades",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"upgrades"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"64891833dfe5b79fd797fcb0\",   \r\n    \"status\": 1    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/upgrades/updatestatus",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"upgrades",
+										"updatestatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"64891833dfe5b79fd797fcb0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/upgrades",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"upgrades"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Festival",
+					"item": [
+						{
+							"name": "Getall",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/festivals",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"festivals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Tên lễ hội 1\",       \r\n    \"description\": \"Nội dung mô tả về lễ hội\",    \r\n    \"historicalsiteid\": \"647ef3dfac0afb22be31605d\", \r\n    \"status\": 1    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/festivals",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"festivals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"648974726b17edea82f7f031\",\r\n    \"name\": \"Tên lễ hội 2 edited\",       \r\n    \"description\": \"Nội dung mô tả về lễ hội\",    \r\n    \"historicalsiteid\": \"647ef3dfac0afb22be31605d\", \r\n    \"status\": 1    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/festivals",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"festivals"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"648974726b17edea82f7f031\",   \r\n    \"status\": 1    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/festivals/updatestatus",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"festivals",
+										"updatestatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"648974786b17edea82f7f035\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/historicalsites/festivals",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"historicalsites",
+										"festivals"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Getall",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/historicalsites",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"historicalsites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tên của di tích lịch sử 5\",\r\n    \"avatar\": \"\",\r\n    \"introduce\": \"Giới thiệu về di tích lịch sử\",\r\n    \"areaid\": \"647ee4dc5b75cd521254dba3\",\r\n    \"areadetail\": \"Xóm 2\",\r\n    \"latlong\": \"\",\r\n    \"greatpeople\": \"Thông tin về danh nhân\",\r\n    \"vrlink\": \"https://vr3d.vn/trienlam/tuong-tac/3d-interactive-car-configurator/embed.html\",\r\n    \"audiofiles\": [        \r\n    ],\r\n    \"scanfiles\": [      \r\n    ],\r\n    \"images\": [       \r\n    ],\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/historicalsites",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"historicalsites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"\",\r\n    \"name\": \"VNPT Thái Nguyên\",\r\n    \"avatar\": \"\",\r\n    \"introduce\": \"Số 10, đường Cách mạng tháng 8, phường Phan Đình Phùng, TP.Thái Nguyên\",\r\n    \"areaid\": \"02083756559\",\r\n    \"areadetail\": \"\",\r\n    \"latlong\": 15,\r\n    \"greatpeople\": \"30/04/2023\",\r\n    \"vrlink\": \"08:30\", \r\n    \"audiofiles\": [\r\n\r\n    ],\r\n    \"scanfiles\": [\r\n\r\n    ],\r\n    \"images\": [\r\n\r\n    ],\r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/historicalsites",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"historicalsites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"647ef3dfac0afb22be31605d\",   \r\n    \"status\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/historicalsites/updatestatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"historicalsites",
+								"updatestatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"647ef3dfac0afb22be31605d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/historicalsites",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"historicalsites"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add(`devicetype: Postman`)",
+					"pm.request.headers.add(`deviceinfo: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:108.0) Gecko/20100101 Firefox/108.0`)",
+					"pm.request.headers.add(`clientip: 10.23.29.6`)",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "asdasdasdas",
+			"type": "string"
+		}
+	]
+}

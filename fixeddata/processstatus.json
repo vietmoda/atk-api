@@ -1,0 +1,14 @@
+[
+    {
+        "key": 0,
+        "value": "New"
+    },
+    {
+        "key": 1,
+        "value": "Visited"
+    },
+    {
+        "key": 2,
+        "value": "Processed"
+    }
+]

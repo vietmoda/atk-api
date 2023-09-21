@@ -1,0 +1,8 @@
+{
+    "host": "smtp.domain.com",
+    "port ": 578,
+    "auth": {
+        "user": "abc@domain.com",
+        "pass": "123456789"
+    }
+}

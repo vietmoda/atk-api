@@ -1,0 +1,14 @@
+{
+    "useravatar": 1,
+    "organizationlogo": 2,
+    "albumimage": 3,
+    "videofile": 4,
+    "videoavatar": 5,
+    "weblinkimage": 6,
+    "newstitleimage": 7,
+    "menuimage": 8,    
+    "historicalsiteaudio": 9,
+    "historicalsitescanfile": 10,
+    "historicalsiteimage": 11,
+    "historicalsiteavatar": 12
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "key": 0,
+        "value": "Disabled"
+    },
+    {
+        "key": 1,
+        "value": "Actived"
+    },
+    {
+        "key": 2,
+        "value": "Deleted"
+    }
+]

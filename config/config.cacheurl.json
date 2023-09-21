@@ -1,0 +1,1157 @@
+[
+  {
+    "description": "Lấy danh sách người dùng",
+    "method": "get",
+    "roleid": "1",
+    "apiurl": "/api/users",
+    "prefixcachekey": "9bc65c2abec141778ffaa729489f3e87",
+    "accepttype": "guest"    
+  },
+  {
+    "description": "Thêm mới người dùng",
+    "method": "post",
+    "roleid": "1a",
+    "apiurl": "/api/users",
+    "prefixcachekey": "9bc65c2abec141778ffaa729489f3e87",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin người dùng",
+    "method": "put",
+    "roleid": "1b",
+    "apiurl": "/api/users",
+    "prefixcachekey": "9bc65c2abec141778ffaa729489f3e87",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa người dùng",
+    "method": "delete",
+    "roleid": "1c",
+    "apiurl": "/api/users",
+    "prefixcachekey": "9bc65c2abec141778ffaa729489f3e87",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Đánh dấu xóa người dùng",
+    "method": "put",
+    "roleid": "1d",
+    "apiurl": "/api/users/destroy",
+    "prefixcachekey": "9bc65c2abec141778ffaa729489f3e87",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách người dùng theo _id",
+    "method": "get",
+    "roleid": "1e",
+    "apiurl": "/api/users/byid",
+    "prefixcachekey": "9bc65c2abec141778ffaa729489f3e87",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách người dùng theo username",
+    "method": "get",
+    "roleid": "1f",
+    "apiurl": "/api/users/byusername",
+    "prefixcachekey": "9bc65c2abec141778ffaa729489f3e87",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Gán quyền thao tác người dùng",
+    "method": "put",
+    "roleid": "1g",
+    "apiurl": "/api/users/grandrole",
+    "prefixcachekey": "9bc65c2abec141778ffaa729489f3e87",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách nhóm quyền",
+    "method": "get",
+    "roleid": "2",
+    "apiurl": "/api/groups",
+    "prefixcachekey": "1471e4e05a4db95d353cc867fe317314",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách nhóm quyền theo _id",
+    "method": "get",
+    "roleid": "2a",
+    "apiurl": "/api/groups/byid",
+    "prefixcachekey": "1471e4e05a4db95d353cc867fe317314",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới nhóm quyền",
+    "method": "post",
+    "roleid": "2b",
+    "apiurl": "/api/groups",
+    "prefixcachekey": "1471e4e05a4db95d353cc867fe317314",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin nhóm quyền",
+    "method": "put",
+    "roleid": "2c",
+    "apiurl": "/api/groups",
+    "prefixcachekey": "1471e4e05a4db95d353cc867fe317314",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa nhóm quyền",
+    "method": "delete",
+    "roleid": "2d",
+    "apiurl": "/api/groups",
+    "prefixcachekey": "1471e4e05a4db95d353cc867fe317314",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi danh sách quyền trong nhóm quyền",
+    "method": "put",
+    "roleid": "2e",
+    "apiurl": "/api/groups/editrole",
+    "prefixcachekey": "1471e4e05a4db95d353cc867fe317314",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Kiểm tra quyền có nằm trong nhóm quyền",
+    "method": "put",
+    "roleid": "2f",
+    "apiurl": "/api/groups/ingroup",
+    "prefixcachekey": "1471e4e05a4db95d353cc867fe317314",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu nhóm quyền",
+    "method": "put",
+    "roleid": "2g",
+    "apiurl": "/api/groups/updatestatus",
+    "prefixcachekey": "1471e4e05a4db95d353cc867fe317314",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách quyền thao tác",
+    "method": "get",
+    "roleid": "3",
+    "apiurl": "/api/roles",
+    "prefixcachekey": "4295e8065f2f640103f566df3329e17f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới quyền thao tác",
+    "method": "post",
+    "roleid": "3a",
+    "apiurl": "/api/roles",
+    "prefixcachekey": "4295e8065f2f640103f566df3329e17f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin quyền thao tác",
+    "method": "put",
+    "roleid": "3b",
+    "apiurl": "/api/roles",
+    "prefixcachekey": "4295e8065f2f640103f566df3329e17f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa quyền thao tác",
+    "method": "delete",
+    "roleid": "3c",
+    "apiurl": "/api/roles",
+    "prefixcachekey": "4295e8065f2f640103f566df3329e17f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin quyền thao tác theo _id",
+    "method": "get",
+    "roleid": "3d",
+    "apiurl": "/api/roles/byid",
+    "prefixcachekey": "4295e8065f2f640103f566df3329e17f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu quyền thao tác",
+    "method": "put",
+    "roleid": "3e",
+    "apiurl": "/api/roles/updatestatus",
+    "prefixcachekey": "4295e8065f2f640103f566df3329e17f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới file",
+    "method": "post",
+    "roleid": "4",
+    "apiurl": "/api/files",
+    "prefixcachekey": "45b963397aa40d4a0063e0d85e4fe7a1",
+    "accepttype": "guest"
+  },  
+  {
+    "description": "Lấy thông tin file theo _id",
+    "method": "get",
+    "roleid": "4a",
+    "apiurl": "/api/files/byid",
+    "prefixcachekey": "45b963397aa40d4a0063e0d85e4fe7a1",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách file theo dữ liệu nguồn",
+    "method": "get",
+    "roleid": "4b",
+    "apiurl": "/api/files/bysource",
+    "prefixcachekey": "45b963397aa40d4a0063e0d85e4fe7a1",
+    "accepttype": "guest"
+  },  
+  {
+    "description": "Xóa một file",
+    "method": "delete",
+    "roleid": "4c",
+    "apiurl": "/api/files",
+    "prefixcachekey": "45b963397aa40d4a0063e0d85e4fe7a1",
+    "accepttype": "guest"
+  },  
+  {
+    "description": "Xóa nhiều file",
+    "method": "delete",
+    "roleid": "4d",
+    "apiurl": "/api/files/multi",
+    "prefixcachekey": "45b963397aa40d4a0063e0d85e4fe7a1",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách danh mục dùng chung",
+    "method": "get",
+    "roleid": "5",
+    "apiurl": "/api/categories",
+    "prefixcachekey": "b0b5ccb4a195a07fd3eed14affb8695f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới danh mục dùng chung",
+    "method": "post",
+    "roleid": "5a",
+    "apiurl": "/api/categories",
+    "prefixcachekey": "b0b5ccb4a195a07fd3eed14affb8695f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin danh mục dùng chung",
+    "method": "put",
+    "roleid": "5b",
+    "apiurl": "/api/categories",
+    "prefixcachekey": "b0b5ccb4a195a07fd3eed14affb8695f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa danh mục dùng chung",
+    "method": "delete",
+    "roleid": "5c",
+    "apiurl": "/api/categories",
+    "prefixcachekey": "b0b5ccb4a195a07fd3eed14affb8695f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh mục dùng chung theo _id",
+    "method": "get",
+    "roleid": "5d",
+    "apiurl": "/api/categories/byid",
+    "prefixcachekey": "b0b5ccb4a195a07fd3eed14affb8695f",
+    "accepttype": "guest"
+  },  
+  {
+    "description": "Thay đổi trạng thái dữ liệu danh mục dùng chung",
+    "method": "put",
+    "roleid": "5f",
+    "apiurl": "/api/categories/updatestatus",
+    "prefixcachekey": "b0b5ccb4a195a07fd3eed14affb8695f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách chi tiết danh mục dùng chung",
+    "method": "get",
+    "roleid": "6",
+    "apiurl": "/api/items",
+    "prefixcachekey": "691d502cfd0e0626cd3b058e5682ad1c",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới chi tiết danh mục dùng chung",
+    "method": "post",
+    "roleid": "6a",
+    "apiurl": "/api/items",
+    "prefixcachekey": "691d502cfd0e0626cd3b058e5682ad1c",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin chi tiết danh mục dùng chung",
+    "method": "put",
+    "roleid": "6b",
+    "apiurl": "/api/items",
+    "prefixcachekey": "691d502cfd0e0626cd3b058e5682ad1c",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa chi tiết danh mục dùng chung",
+    "method": "delete",
+    "roleid": "6c",
+    "apiurl": "/api/items",
+    "prefixcachekey": "691d502cfd0e0626cd3b058e5682ad1c",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy chi tiết danh mục dùng chung theo loại",
+    "method": "get",
+    "roleid": "6d",
+    "apiurl": "/api/items/bycategoryid",
+    "prefixcachekey": "691d502cfd0e0626cd3b058e5682ad1c",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy chi tiết danh mục dùng chung theo _id",
+    "method": "get",
+    "roleid": "6e",
+    "apiurl": "/api/items/getbyid",
+    "prefixcachekey": "691d502cfd0e0626cd3b058e5682ad1c",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu chi tiết danh mục dùng chung",
+    "method": "put",
+    "roleid": "6f",
+    "apiurl": "/api/items/updatestatus",
+    "prefixcachekey": "691d502cfd0e0626cd3b058e5682ad1c",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách cơ quan",
+    "method": "get",
+    "roleid": "7",
+    "apiurl": "/api/organizations",
+    "prefixcachekey": "d9811f03b461a380c0d6b4a497dbac37",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới cơ quan",
+    "method": "post",
+    "roleid": "7a",
+    "apiurl": "/api/organizations",
+    "prefixcachekey": "d9811f03b461a380c0d6b4a497dbac37",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin cơ quan",
+    "method": "put",
+    "roleid": "7c",
+    "apiurl": "/api/organizations",
+    "prefixcachekey": "d9811f03b461a380c0d6b4a497dbac37",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa cơ quan",
+    "method": "delete",
+    "roleid": "7d",
+    "apiurl": "/api/organizations",
+    "prefixcachekey": "d9811f03b461a380c0d6b4a497dbac37",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin cơ quan theo _id",
+    "method": "get",
+    "roleid": "7e",
+    "apiurl": "/api/organizations/byid",
+    "prefixcachekey": "d9811f03b461a380c0d6b4a497dbac37",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin cơ quan theo mã (code)",
+    "method": "get",
+    "roleid": "7e",
+    "apiurl": "/api/organizations/bycode",
+    "prefixcachekey": "d9811f03b461a380c0d6b4a497dbac37",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Đánh dấu xóa dữ liệu cơ quan",
+    "method": "put",
+    "roleid": "7f",
+    "apiurl": "/api/organizations/destroy",
+    "prefixcachekey": "d9811f03b461a380c0d6b4a497dbac37",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu cơ quan",
+    "method": "put",
+    "roleid": "7g",
+    "apiurl": "/api/organizations/updatestatus",
+    "prefixcachekey": "d9811f03b461a380c0d6b4a497dbac37",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách chuyên mục",
+    "method": "get",
+    "roleid": "8",
+    "apiurl": "/api/newscategories",
+    "prefixcachekey": "6e35b2af1536a7026e74d52dfabdbdb5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới chuyên mục",
+    "method": "post",
+    "roleid": "8a",
+    "apiurl": "/api/newscategories",
+    "prefixcachekey": "6e35b2af1536a7026e74d52dfabdbdb5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin chuyên mục",
+    "method": "put",
+    "roleid": "8b",
+    "apiurl": "/api/newscategories",
+    "prefixcachekey": "6e35b2af1536a7026e74d52dfabdbdb5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa chuyên mục",
+    "method": "delete",
+    "roleid": "8c",
+    "apiurl": "/api/newscategories",
+    "prefixcachekey": "6e35b2af1536a7026e74d52dfabdbdb5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu chuyên mục",
+    "method": "put",
+    "roleid": "8d",
+    "apiurl": "/api/newscategories/updatestatus",
+    "prefixcachekey": "6e35b2af1536a7026e74d52dfabdbdb5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin chuyên mục theo _id",
+    "method": "get",
+    "roleid": "8e",
+    "apiurl": "/api/newscategories/byid",
+    "prefixcachekey": "6e35b2af1536a7026e74d52dfabdbdb5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách chuyên mục theo id cha",
+    "method": "get",
+    "roleid": "8f",
+    "apiurl": "/api/newscategories/byparentid",
+    "prefixcachekey": "6e35b2af1536a7026e74d52dfabdbdb5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách chuyên mục theo hình cây",
+    "method": "get",
+    "roleid": "8g",
+    "apiurl": "/api/newscategories/gettrees",
+    "prefixcachekey": "6e35b2af1536a7026e74d52dfabdbdb5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách video",
+    "method": "get",
+    "roleid": "9",
+    "apiurl": "/api/videos",
+    "prefixcachekey": "69f9ad89826980cc38cc1661d23e893e",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới video",
+    "method": "post",
+    "roleid": "9a",
+    "apiurl": "/api/videos",
+    "prefixcachekey": "69f9ad89826980cc38cc1661d23e893e",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin video",
+    "method": "put",
+    "roleid": "9b",
+    "apiurl": "/api/videos",
+    "prefixcachekey": "69f9ad89826980cc38cc1661d23e893e",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa video",
+    "method": "delete",
+    "roleid": "9c",
+    "apiurl": "/api/videos",
+    "prefixcachekey": "69f9ad89826980cc38cc1661d23e893e",
+    "accepttype": "guest"
+  },
+  {    
+    "description": "Lấy danh sách video theo chuyên mục",
+    "method": "get",
+    "roleid": "9d",
+    "apiurl": "/api/videos/bycategoryid",
+    "prefixcachekey": "69f9ad89826980cc38cc1661d23e893e",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin video theo _id",
+    "method": "get",
+    "roleid": "9e",
+    "apiurl": "/api/videos/getbyid",
+    "prefixcachekey": "69f9ad89826980cc38cc1661d23e893e",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu video",
+    "method": "put",
+    "roleid": "9f",
+    "apiurl": "/api/videos/updatestatus",
+    "prefixcachekey": "69f9ad89826980cc38cc1661d23e893e",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách album",
+    "method": "get",
+    "roleid": "10",
+    "apiurl": "/api/albums",
+    "prefixcachekey": "75d6a8c217a4392820a1e94ce38a272d",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới album",
+    "method": "post",
+    "roleid": "10a",
+    "apiurl": "/api/albums",
+    "prefixcachekey": "75d6a8c217a4392820a1e94ce38a272d",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi thông tin album",
+    "method": "put",
+    "roleid": "10b",
+    "apiurl": "/api/albums",
+    "prefixcachekey": "75d6a8c217a4392820a1e94ce38a272d",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa album",
+    "method": "delete",
+    "roleid": "10c",
+    "apiurl": "/api/albums",
+    "prefixcachekey": "75d6a8c217a4392820a1e94ce38a272d",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách album theo chuyên mục",
+    "method": "get",
+    "roleid": "10d",
+    "apiurl": "/api/albums/bycategoryid",
+    "prefixcachekey": "75d6a8c217a4392820a1e94ce38a272d",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin album theo _id",
+    "method": "get",
+    "roleid": "10e",
+    "apiurl": "/api/albums/getbyid",
+    "prefixcachekey": "75d6a8c217a4392820a1e94ce38a272d",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu album",
+    "method": "put",
+    "roleid": "10f",
+    "apiurl": "/api/albums/updatestatus",
+    "prefixcachekey": "75d6a8c217a4392820a1e94ce38a272d",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Upload nhiều ảnh vào album",
+    "method": "post",
+    "roleid": "10g",
+    "apiurl": "/api/albums/multi",
+    "prefixcachekey": "75d6a8c217a4392820a1e94ce38a272d",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách liên kết trang",
+    "method": "get",
+    "roleid": "11",
+    "apiurl": "/api/weblinks",
+    "prefixcachekey": "50594055c7a1ed4ebc01c59270914083",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới liên kết trang",
+    "method": "post",
+    "roleid": "11a",
+    "apiurl": "/api/weblinks",
+    "prefixcachekey": "50594055c7a1ed4ebc01c59270914083",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách liên kết trang",
+    "method": "put",
+    "roleid": "11b",
+    "apiurl": "/api/weblinks",
+    "prefixcachekey": "50594055c7a1ed4ebc01c59270914083",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa dữ liệu liên kết trang",
+    "method": "delete",
+    "roleid": "11c",
+    "apiurl": "/api/weblinks",
+    "prefixcachekey": "50594055c7a1ed4ebc01c59270914083",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách liên kết trang theo chuyên mục",
+    "method": "get",
+    "roleid": "11d",
+    "apiurl": "/api/weblinks/bycategoryid",
+    "prefixcachekey": "50594055c7a1ed4ebc01c59270914083",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin liên kết trang theo _id",
+    "method": "get",
+    "roleid": "11e",
+    "apiurl": "/api/weblinks/getbyid",
+    "prefixcachekey": "50594055c7a1ed4ebc01c59270914083",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu liên kết trang",
+    "method": "put",
+    "roleid": "11f",
+    "apiurl": "/api/weblinks/updatestatus",
+    "prefixcachekey": "50594055c7a1ed4ebc01c59270914083",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách bài viết",
+    "method": "get",
+    "roleid": "12",
+    "apiurl": "/api/news",
+    "prefixcachekey": "f8e61f1870ccda555a280196e01d05c3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới bài viết",
+    "method": "post",
+    "roleid": "12a",
+    "apiurl": "/api/news",
+    "prefixcachekey": "f8e61f1870ccda555a280196e01d05c3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin bài viết",
+    "method": "put",
+    "roleid": "12b",
+    "apiurl": "/api/news",
+    "prefixcachekey": "f8e61f1870ccda555a280196e01d05c3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa bài viết",
+    "method": "delete",
+    "roleid": "12c",
+    "apiurl": "/api/news",
+    "prefixcachekey": "f8e61f1870ccda555a280196e01d05c3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách bài viết theo chuyên mục và cac tiêu chí khác",
+    "method": "get",
+    "roleid": "12d",
+    "apiurl": "/api/news/bycategoryid",
+    "prefixcachekey": "f8e61f1870ccda555a280196e01d05c3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin bài viết theo _id",
+    "method": "get",
+    "roleid": "12e",
+    "apiurl": "/api/news/getbyid",
+    "prefixcachekey": "f8e61f1870ccda555a280196e01d05c3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Đếm số lượng bài viết theo chuyên mục và cac tiêu chí khác",
+    "method": "get",
+    "roleid": "12f",
+    "apiurl": "/api/news/countbycategoryid",
+    "prefixcachekey": "f8e61f1870ccda555a280196e01d05c3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu bài viết",
+    "method": "put",
+    "roleid": "12g",
+    "apiurl": "/api/news/updatestatus",
+    "prefixcachekey": "f8e61f1870ccda555a280196e01d05c3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách đặt lịch",
+    "method": "get",
+    "roleid": "13",
+    "apiurl": "/api/bookings",
+    "prefixcachekey": "acd0d1e3b20d20f023d8b9b02ae47ec3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới đặt lịch",
+    "method": "post",
+    "roleid": "13a",
+    "apiurl": "/api/bookings",
+    "prefixcachekey": "acd0d1e3b20d20f023d8b9b02ae47ec3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin đặt lịch",
+    "method": "put",
+    "roleid": "13b",
+    "apiurl": "/api/bookings",
+    "prefixcachekey": "acd0d1e3b20d20f023d8b9b02ae47ec3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa dữ liệu đặt lịch",
+    "method": "delete",
+    "roleid": "13c",
+    "apiurl": "/api/bookings",
+    "prefixcachekey": "acd0d1e3b20d20f023d8b9b02ae47ec3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách đặt lịch tham quan, dâng hương",
+    "method": "get",
+    "roleid": "13d",
+    "apiurl": "/api/bookings/getpaging",
+    "prefixcachekey": "acd0d1e3b20d20f023d8b9b02ae47ec3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Đếm số lượng đặt lịch tham quan, dâng hương",
+    "method": "get",
+    "roleid": "13e",
+    "apiurl": "/api/bookings/count",
+    "prefixcachekey": "acd0d1e3b20d20f023d8b9b02ae47ec3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin đặt lịch tham quan, dâng hương theo _id",
+    "method": "get",
+    "roleid": "13f",
+    "apiurl": "/api/bookings/getbyid",
+    "prefixcachekey": "acd0d1e3b20d20f023d8b9b02ae47ec3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu đặt lịch tham quan, dâng hương",
+    "method": "put",
+    "roleid": "13g",
+    "apiurl": "/api/bookings/updatestatus",
+    "prefixcachekey": "acd0d1e3b20d20f023d8b9b02ae47ec3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái xử lý dữ liệu đặt lịch tham quan, dâng hương",
+    "method": "put",
+    "roleid": "13h",
+    "apiurl": "/api/bookings/updateprocess",
+    "prefixcachekey": "acd0d1e3b20d20f023d8b9b02ae47ec3",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách thực đơn mẫu",
+    "method": "get",
+    "roleid": "14",
+    "apiurl": "/api/suggestedmenus",
+    "prefixcachekey": "96c60ee557dffaa3938c1978f5a0a38a",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới thực đơn mẫu",
+    "method": "post",
+    "roleid": "14a",
+    "apiurl": "/api/suggestedmenus",
+    "prefixcachekey": "96c60ee557dffaa3938c1978f5a0a38a",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin thực đơn mẫu",
+    "method": "put",
+    "roleid": "14b",
+    "apiurl": "/api/suggestedmenus",
+    "prefixcachekey": "96c60ee557dffaa3938c1978f5a0a38a",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa thực đơn mẫu",
+    "method": "delete",
+    "roleid": "14c",
+    "apiurl": "/api/suggestedmenus",
+    "prefixcachekey": "96c60ee557dffaa3938c1978f5a0a38a",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu thực đơn mẫu",
+    "method": "put",
+    "roleid": "14e",
+    "apiurl": "/api/suggestedmenus/updatestatus",
+    "prefixcachekey": "96c60ee557dffaa3938c1978f5a0a38a",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa ảnh thực đơn mẫu",
+    "method": "put",
+    "roleid": "14f",
+    "apiurl": "/api/suggestedmenus/deleteimage",
+    "prefixcachekey": "96c60ee557dffaa3938c1978f5a0a38a",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách đặt ăn",
+    "method": "get",
+    "roleid": "15",
+    "apiurl": "/api/ordermenus",
+    "prefixcachekey": "cbd9ad726837637d4ae496f3a75a4a36",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới thông tin đặt ăn",
+    "method": "post",
+    "roleid": "15a",
+    "apiurl": "/api/ordermenus",
+    "prefixcachekey": "cbd9ad726837637d4ae496f3a75a4a36",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin đặt ăn",
+    "method": "put",
+    "roleid": "15b",
+    "apiurl": "/api/ordermenus",
+    "prefixcachekey": "cbd9ad726837637d4ae496f3a75a4a36",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa dữ liệu đặt ăn",
+    "method": "delete",
+    "roleid": "15c",
+    "apiurl": "/api/ordermenus",
+    "prefixcachekey": "cbd9ad726837637d4ae496f3a75a4a36",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách đặt ăn",
+    "method": "get",
+    "roleid": "15e",
+    "apiurl": "/api/ordermenus/getpaging",
+    "prefixcachekey": "cbd9ad726837637d4ae496f3a75a4a36",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Đếm số lượng đặt ăn",
+    "method": "get",
+    "roleid": "15f",
+    "apiurl": "/api/ordermenus/count",
+    "prefixcachekey": "cbd9ad726837637d4ae496f3a75a4a36",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin đặt ăn theo _id",
+    "method": "get",
+    "roleid": "15g",
+    "apiurl": "/api/ordermenus/getbyid",
+    "prefixcachekey": "cbd9ad726837637d4ae496f3a75a4a36",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu đặt ăn",
+    "method": "put",
+    "roleid": "15h",
+    "apiurl": "/api/ordermenus/updatestatus",
+    "prefixcachekey": "cbd9ad726837637d4ae496f3a75a4a36",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Cập nhật trạng thái xử lý dữ liệu đặt ăn",
+    "method": "put",
+    "roleid": "15i",
+    "apiurl": "/api/ordermenus/updateprocess",
+    "prefixcachekey": "cbd9ad726837637d4ae496f3a75a4a36",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách cấu hình hệ thống",
+    "method": "get",
+    "roleid": "16",
+    "apiurl": "/api/systemconfigs",
+    "prefixcachekey": "225bad71ae578e542ede4d45baf6f023",
+    "accepttype": "admin"
+  },
+  {
+    "description": "Thêm mới cấu hình hệ thống",
+    "method": "post",
+    "roleid": "16a",
+    "apiurl": "/api/systemconfigs",
+    "prefixcachekey": "225bad71ae578e542ede4d45baf6f023",
+    "accepttype": "admin"
+  },
+  {
+    "description": "Sửa thông tin cấu hình hệ thống",
+    "method": "put",
+    "roleid": "16b",
+    "apiurl": "/api/systemconfigs",
+    "prefixcachekey": "225bad71ae578e542ede4d45baf6f023",
+    "accepttype": "admin"
+  },
+  {
+    "description": "Xóa cấu hình hệ thống",
+    "method": "delete",
+    "roleid": "16c",
+    "apiurl": "/api/systemconfigs",
+    "prefixcachekey": "225bad71ae578e542ede4d45baf6f023",
+    "accepttype": "admin"
+  },
+  {
+    "description": "Lấy thông tin cấu hình hệ thống theo key",
+    "method": "get",
+    "roleid": "16d",
+    "apiurl": "/api/systemconfigs/getbykey",
+    "prefixcachekey": "225bad71ae578e542ede4d45baf6f023",
+    "accepttype": "admin"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu cấu hình hệ thống",
+    "method": "put",
+    "roleid": "16e",
+    "apiurl": "/api/systemconfigs/updatestatus",
+    "prefixcachekey": "225bad71ae578e542ede4d45baf6f023",
+    "accepttype": "admin"
+  },
+  {
+    "description": "Tra cứu nhật ký thao tác hệ thống",
+    "method": "get",
+    "roleid": "17",
+    "apiurl": "/api/logcommands/searchlog",
+    "prefixcachekey": "5024d39cf408e3f0395586beb6e6c7f9",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Đếm số lượng nhật ký thao tác",
+    "method": "get",
+    "roleid": "17a",
+    "apiurl": "/api/logcommands/count",
+    "prefixcachekey": "5024d39cf408e3f0395586beb6e6c7f9",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách đơn vị hành chính",
+    "method": "get",
+    "roleid": "18",
+    "apiurl": "/api/areas",
+    "prefixcachekey": "d0c9927258d27bffeec0d0f4f7b9cbe7",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới đơn vị hành chính",
+    "method": "post",
+    "roleid": "18a",
+    "apiurl": "/api/areas",
+    "prefixcachekey": "d0c9927258d27bffeec0d0f4f7b9cbe7",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin đơn vị hành chính",
+    "method": "put",
+    "roleid": "18b",
+    "apiurl": "/api/areas",
+    "prefixcachekey": "d0c9927258d27bffeec0d0f4f7b9cbe7",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa đơn vị hành chính",
+    "method": "delete",
+    "roleid": "18c",
+    "apiurl": "/api/areas",
+    "prefixcachekey": "d0c9927258d27bffeec0d0f4f7b9cbe7",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin đơn vị hành chính theo _id",
+    "method": "get",
+    "roleid": "18d",
+    "apiurl": "/api/areas/byid",
+    "prefixcachekey": "d0c9927258d27bffeec0d0f4f7b9cbe7",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin đơn vị hành chính theo code",
+    "method": "get",
+    "roleid": "18e",
+    "apiurl": "/api/areas/getbycode",
+    "prefixcachekey": "d0c9927258d27bffeec0d0f4f7b9cbe7",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Cập nhật trạng thái dữ liệu đơn vị hành chính theo code",
+    "method": "put",
+    "roleid": "18f",
+    "apiurl": "/api/areas/updatestatus",
+    "prefixcachekey": "d0c9927258d27bffeec0d0f4f7b9cbe7",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách các tài khoản gọi các API của hệ thống cấp ra ngoài",
+    "method": "get",
+    "roleid": "19",
+    "apiurl": "/api/apiaccounts",
+    "prefixcachekey": "3064d8d1aeb3840ab479e2042c833ae5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới tài khoản gọi API",
+    "method": "post",
+    "roleid": "19a",
+    "apiurl": "/api/apiaccounts",
+    "prefixcachekey": "3064d8d1aeb3840ab479e2042c833ae5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin tài khoản gọi API",
+    "method": "put",
+    "roleid": "19b",
+    "apiurl": "/api/apiaccounts",
+    "prefixcachekey": "3064d8d1aeb3840ab479e2042c833ae5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thay đổi trạng thái dữ liệu tài khoản gọi API",
+    "method": "put",
+    "roleid": "19c",
+    "apiurl": "/api/apiaccounts/updatestatus",
+    "prefixcachekey": "3064d8d1aeb3840ab479e2042c833ae5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa tài khoản gọi API",
+    "method": "delete",
+    "roleid": "19d",
+    "apiurl": "/api/apiaccounts",
+    "prefixcachekey": "3064d8d1aeb3840ab479e2042c833ae5",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Gửi email từ hệ thống",
+    "method": "post",
+    "roleid": "19d",
+    "apiurl": "/api/emails/sendtext",
+    "prefixcachekey": "140dbe9872df3e59c4bd2765a535be8f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Gửi email từ hệ thống",
+    "method": "post",
+    "roleid": "19d",
+    "apiurl": "/api/emails/sendhtml",
+    "prefixcachekey": "140dbe9872df3e59c4bd2765a535be8f",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách điểm di tích lịch sử",
+    "method": "get",
+    "roleid": "20",
+    "apiurl": "/api/historicalsites",
+    "prefixcachekey": "fe67601e680707b9dba87365b876f757",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới điểm di tích lịch sử",
+    "method": "post",
+    "roleid": "20b",
+    "apiurl": "/api/historicalsites",
+    "prefixcachekey": "fe67601e680707b9dba87365b876f757",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin điểm di tích lịch sử",
+    "method": "put",
+    "roleid": "20c",
+    "apiurl": "/api/historicalsites",
+    "prefixcachekey": "fe67601e680707b9dba87365b876f757",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa điểm di tích lịch sử",
+    "method": "delete",
+    "roleid": "20d",
+    "apiurl": "/api/historicalsites",
+    "prefixcachekey": "fe67601e680707b9dba87365b876f757",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa điểm di tích lịch sử",
+    "method": "put",
+    "roleid": "20e",
+    "apiurl": "/api/historicalsites/updatestatus",
+    "prefixcachekey": "fe67601e680707b9dba87365b876f757",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy thông tin một điểm di tích lịch sử theo _id",
+    "method": "get",
+    "roleid": "20f",
+    "apiurl": "/api/historicalsites/getbyid",
+    "prefixcachekey": "fe67601e680707b9dba87365b876f757",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách hiện vật",
+    "method": "get",
+    "roleid": "21",
+    "apiurl": "/api/artifacts",
+    "prefixcachekey": "f2e3005a788ecb387cc63e39f4e6aaed",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Lấy danh sách hiện vật theo _id",
+    "method": "get",
+    "roleid": "21a",
+    "apiurl": "/api/artifacts/byid",
+    "prefixcachekey": "f2e3005a788ecb387cc63e39f4e6aaed",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Thêm mới hiện vật",
+    "method": "post",
+    "roleid": "21b",
+    "apiurl": "/api/artifacts/byid",
+    "prefixcachekey": "f2e3005a788ecb387cc63e39f4e6aaed",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Sửa thông tin hiện vật",
+    "method": "put",
+    "roleid": "21c",
+    "apiurl": "/api/artifacts/byid",
+    "prefixcachekey": "f2e3005a788ecb387cc63e39f4e6aaed",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Cập nhật trạng thái dữ liệu hiện vật",
+    "method": "put",
+    "roleid": "21c",
+    "apiurl": "/api/artifacts/updatestatus",
+    "prefixcachekey": "f2e3005a788ecb387cc63e39f4e6aaed",
+    "accepttype": "guest"
+  },
+  {
+    "description": "Xóa dữ liệu hiện vật",
+    "method": "delete",
+    "roleid": "21d",
+    "apiurl": "/api/artifacts/updatestatus",
+    "prefixcachekey": "f2e3005a788ecb387cc63e39f4e6aaed",
+    "accepttype": "guest"
+  }
+
+]
+
+

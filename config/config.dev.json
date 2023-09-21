@@ -1,0 +1,12 @@
+{
+    "PORT_SERVER": 3000,
+    "DATABASE_SERVER": "mongodb://10.23.3.20:27017/",
+    "DATABASE_NAME": "atkdb",
+    "PUBLIC_DIR_PHYSICAL": "public",
+    "PUBLIC_URL_FILE": "/public", 
+    "REDIS_CONNECT" : {
+        "host": "127.0.0.1",
+        "port": 6379,        
+        "db": 0        
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "PORT_SERVER": 3000,
+    "DATABASE_SERVER": "mongodb://localhost:27017/",
+    "DATABASE_NAME": "testdb",
+    "PUBLIC_DIR_PHYSICAL": "public",
+    "PUBLIC_URL_FILE": "/public",
+    "REDIS_CONNECT" : {
+        "host": "127.0.0.1",
+        "port": 6379,
+        "password": "vnpttnn",
+        "db": 0        
+    }
+}

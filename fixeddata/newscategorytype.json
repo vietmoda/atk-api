@@ -1,0 +1,26 @@
+[
+    {
+        "label": "Chuyên mục tin tức",
+        "value": "News"
+    },
+    {
+        "label": "Chuyên mục video",
+        "value": "Video"
+    },
+    {
+        "label": "Chuyên mục audio",
+        "value": "Audio"
+    },
+    {
+        "label": "Album ảnh",
+        "value": "Album"        
+    },
+    {
+        "label": "Liên kết website",
+        "value": "Weblink"        
+    },
+    {
+        "label": "Chuyên đề",
+        "value": "Topic"        
+    }
+]
